@@ -11,27 +11,25 @@ public class AvgScore{
 			return true;
 		}
 	}
-
 	public static double averageScore(ArrayList<Integer>scores){
 		double sum=0;
 		for(int i=0;i<scores.size();i++){
 			sum+=scores.get(i);
 		}
-		
 		/*for(Integer j:scores){
 			sum+=j;     
 			
-		}forÑ­»·µÄµÚ¶şÖÖÀàĞÍ*/
+		}forå¾ªç¯çš„ç¬¬äºŒç§ç±»å‹*/
 		/*int j=0;
 		while(j<scores.size()){
 			sum+=scores.get(j);
 			j++;
-		} whileÑ­»· */
+		} whileå¾ªç¯ */
 		/*int j=1;
 		do{
 			sum+=scores.get(j-1);
 			j++;
-		}while(j<scores.size());do while Ñ­»·*/
+		}while(j<scores.size());do while å¾ªç¯*/
 		return sum/scores.size(); 
 	}
 	public static void main(String[] args){;
@@ -39,13 +37,13 @@ public class AvgScore{
 	ArrayList<Integer>scores=new ArrayList<Integer>();
 	String num;
 	int m=0;
-	System.out.println("Êä³öÆ½¾ùÖµÇë°´-1");
-	System.out.println("ÇëÊäÈë³É¼¨:");
+	System.out.println("è¾“å‡ºå¹³å‡å€¼è¯·æŒ‰-1");
+	System.out.println("è¯·è¾“å…¥æˆç»©:");
 	do{
 		Scanner sca1=new Scanner(System.in);
 		num=sca1.next();
 		if(isnum(num)){
-			System.out.println("ÊäÈëÊı×Ö²»ÕıÈ·£¬Çë²»ÒªÊäÈëĞ¡ÓÚ0µÄ³É¼¨£¬Èç¹ûÏëÊä³öÆ½¾ùÖµÇëÊäÈë-1");
+			System.out.println("è¾“å…¥æ•°å­—ä¸æ­£ç¡®ï¼Œè¯·ä¸è¦è¾“å…¥å…¶å®ƒå­—ç¬¦æˆ–å°äº0çš„æˆç»©ï¼Œå¦‚æœæƒ³è¾“å‡ºå¹³å‡å€¼è¯·è¾“å…¥-1");
 			continue;
 		}
 		else{
