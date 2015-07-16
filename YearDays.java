@@ -34,6 +34,6 @@ public class YearDays{
 				System.out.println("继续吗？继续请输入Y,退出请按任意键回车");
 				num=in.next();
 			}
-		}while(num.equals(""));
+		}while(num.equals("y"));
 	}
 }
