@@ -5,10 +5,10 @@ class CreatText {
 		File txt=new File("D:\\x.java");
 		boolean issucc=txt.createNewFile();
 		if(issucc){
-			System.out.println("ÎÄ¼ş´´½¨³É¹¦");
+			System.out.println("æ–‡ä»¶åˆ›å»ºæˆåŠŸ");
 		}
 		else
-			System.out.println("ÎÄ¼ş´´½¨Ê§°Ü");
+			System.out.println("æ–‡ä»¶åˆ›å»ºå¤±è´¥");
 	}
 }
 class WriteText {
@@ -16,14 +16,14 @@ class WriteText {
 		File txt=new File("D:\\x.java");
 		Scanner in=new Scanner(System.in);
 		OutputStream os=new FileOutputStream(txt);
-		System.out.println("ÇëÊäÈëÒªĞ´µÄÎÄ±¾");
+		System.out.println("è¯·è¾“å…¥è¦å†™çš„æ–‡æœ¬");
 		String cont=in.next();
 		for(int i=0;i<cont.length();i++){
 			char x=cont.charAt(i);
 			os.write(x);
 		}
 		os.close();
-		System.out.println("ÒÑ¾­Ğ´Èë³É¹¦");
+		System.out.println("å·²ç»å†™å…¥æˆåŠŸ");
 	}
 }
 class ReadText {
@@ -41,10 +41,10 @@ class DelText {
 		File file=new File("D:\\x.java");
 		boolean issucc=file.delete();
 		if(issucc){
-			System.out.println("ÎÄ¼şÒÑ¾­É¾³ı");
+			System.out.println("æ–‡ä»¶å·²ç»åˆ é™¤");
 		}
 		else
-			System.out.println("ÎÄ¼ş²»´æÔÚ£¡");
+			System.out.println("æ–‡ä»¶ä¸å­˜åœ¨ï¼");
 	}
 }
 public class Text {
@@ -54,13 +54,13 @@ public class Text {
 		WriteText txt2=new WriteText();
 		ReadText txt3=new ReadText();
 		DelText txt4=new DelText();
-		System.out.println("ÇëÊäÈëÄãÒªÖ´ĞĞµÄ¹¦ÄÜ¡£1,´´½¨¡£2£¬Ğ´Èë¡£3£¬¶ÁÈ¡¡£4£¬É¾³ı¡£");
+		System.out.println("è¯·è¾“å…¥ä½ è¦æ‰§è¡Œçš„åŠŸèƒ½ã€‚1,åˆ›å»ºã€‚2ï¼Œå†™å…¥ã€‚3ï¼Œè¯»å–ã€‚4ï¼Œåˆ é™¤ã€‚");
 		int S=in.nextInt();
 			switch(S){
 			case 1:txt.creat();break;
 			case 2:txt2.write();break;
 			case 3:txt3.read();break;
-			case 4:txt4.del();break;
+			case 4:txt4.del();break
 		}
 	}
 }
