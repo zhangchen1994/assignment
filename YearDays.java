@@ -4,7 +4,7 @@ public class YearDays{
 		try{
 			int intnum=Integer.parseInt(m);
 			if(intnum<-1){
-				return true;
+				return false;
 			}else
 				return true;
 		}catch(Exception e){
@@ -23,15 +23,15 @@ public class YearDays{
 		int years;
 		String num="y";
 		do{
-			System.out.println("ÇëÊäÈëÄê·İ");
+			System.out.println("è¯·è¾“å…¥å¹´ä»½");
 			year=in.next();
 			if(!isnum(year)){
-				System.out.println("ÇëÊäÈëÕıÈ·µÄÄê·İ");
+				System.out.println("è¯·è¾“å…¥æ­£ç¡®çš„å¹´ä»½");
 				continue;
 			}else{
 				years=Integer.parseInt(year);
-				System.out.println(years+"ÓĞ"+getDays(years)+"Ìì");
-				System.out.println("¼ÌĞøÂğ£¿¼ÌĞøÇëÊäÈëY,ÍË³öÇë°´ÈÎÒâ¼ü»Ø³µ");
+				System.out.println(years+"æœ‰"+getDays(years)+"å¤©");
+				System.out.println("ç»§ç»­å—ï¼Ÿç»§ç»­è¯·è¾“å…¥Y,é€€å‡ºè¯·æŒ‰ä»»æ„é”®å›è½¦");
 				num=in.next();
 			}
 		}while(num.equals("y"));
