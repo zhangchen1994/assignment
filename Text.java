@@ -60,7 +60,7 @@ public class Text {
 			case 1:txt.creat();break;
 			case 2:txt2.write();break;
 			case 3:txt3.read();break;
-			case 4:txt4.del();break
+			case 4:txt4.del();break;
 		}
 	}
 }
