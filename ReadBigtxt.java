@@ -5,7 +5,7 @@ public class ReadBigtxt {
 		InputStream is=new FileInputStream(txt);
 		int ch=0;
 		while((ch=is.read())!=-1){
-			System.out.print((char)ch
+			System.out.print((char)ch）；
 		}
 	}
 }
