@@ -43,7 +43,7 @@ public class AvgScore{
 		Scanner sca1=new Scanner(System.in);
 		num=sca1.next();
 		if(isnum(num)){
-			System.out.println("输入数字不正确，请不要输入小于0的成绩，如果想输出平均值请输入-1");
+			System.out.println("输入数字不正确，请不要输入其它字符或小于0的成绩，如果想输出平均值请输入-1");
 			continue;
 		}
 		else{
