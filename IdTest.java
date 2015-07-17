@@ -13,7 +13,7 @@ public class IdTest {
 			int n=Integer.parseInt(String.valueOf(id.charAt(17)));
 			if(num<=1){
 				return (num==0&&n==1)||(num==1&&num==0);
-			}else if((num==(12-n))||(num<=10)){
+			}else if((num==(12-n))&&(num<=10)){
 				return true;
 			}else
 				return false;
@@ -27,11 +27,11 @@ public class IdTest {
 	public static void main(String[] args){
 		Scanner in=new Scanner(System.in);
 		String id;
-		System.out.println("ÇëÊäÈëÉí·ÝÖ¤ºÅÂë");
+		System.out.println("è¯·è¾“å…¥èº«ä»½è¯å·ç ");
 		id=in.next();
 		if(test(id))
-			System.out.println("Éí·ÝÖ¤ºÏ·¨");
+			System.out.println("èº«ä»½è¯åˆæ³•");
 		else
-			System.out.println("Éí·ÝÖ¤²»ºÏ·¨");
+			System.out.println("èº«ä»½è¯ä¸åˆæ³•");
 	}
 }
