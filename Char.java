@@ -55,12 +55,8 @@ public class Char2 {
 				ch3=ch1.get(i);
 		}
 		for(int i=0;i<ch1.size();i++){
-			try{
 				if(ch1.get(i).length()==ch3.length()){
 					ch2.add(ch1.get(i));
-				}
-			}catch(Exception h){
-				continue;
 			}
 		}
 		for(int i=0;i<ch2.size();i++){
