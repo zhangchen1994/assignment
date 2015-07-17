@@ -1,50 +1,76 @@
 import java.util.*;
-public class Char {
-	public static String test(ArrayList<String>arr){
-		int[][] cont=new int[100][100];
-		String[][] ch=new String[100][100];
-		int k;
-		int cont1=0;
-		String ch1="NO";
-		String ch2=" ";
-		for(int i=0;i<arr.size();i++){
-			k=0;
-			for(int j=0;j<arr.get(i).length()-1;j++){
-				if(arr.get(i).charAt(j)==(arr.get(i).charAt(j+1))){
-					cont[i][k]++;
-					ch[i][k]=String.valueOf(arr.get(i).charAt(j));
-				}else
-					k++;
+public class Char2 {
+	public static String test(String m){
+		int[] ch=new int[100];
+		String[] ch1=new String[100];
+		int n=1;
+		int max=0;
+		int j=0;
+		String ch2="";
+		String ch3="";
+		for(int i=0;i<m.length();i++){
+			if(i!=m.length()-1){
+				if(m.charAt(i)==m.charAt(i+1)){
+					n++;			
+				}else{
+					ch[j]=n;
+					ch1[j]=String.valueOf(m.charAt(i));
+					j++;
+					n=1;
+				}
+			}else{
+				ch[j]=n;
+				ch1[j]=String.valueOf(m.charAt(i));
+				j++;
+				n=1;
 			}
 		}
 		for(int i=0;i<100;i++){
-			for(int j=0;j<100;j++){
-				if(cont1<cont[i][j]){
-					cont1=cont[i][j];
-					ch1=ch[i][j];
-				}
+			if(max<ch[i]){
+				max=ch[i];
+				ch2=ch1[i];
 			}
 		}
-		for(int i=0;i<=cont1;i++){
-			ch2+=ch1;
+		for(int i=0;i<max;i++){
+			ch3+=ch2;
 		}
-		return ch2;
+		return ch3;
 	}
 	public static void main(String[] args){
 		Scanner in=new Scanner(System.in);
-		String ch="-1";
-		String ch2;
-		String n="0";
-		ArrayList<String>arr=new ArrayList<String>();
-		System.out.println("输入若干个字符串，输入-1结束");
-		while(!n.equals("-1")){
+		String ch;
+		ArrayList<String>ch1=new ArrayList<String>();
+		ArrayList<String>ch2=new ArrayList<String>();
+		String ch3="";
+		int max=0;
+		System.out.println("请输入多个字符串，以-1结束");
+		do{
 			ch=in.next();
-			if(!ch.endsWith("-1"))
-			arr.add(in.next());
-			else
-				n="-1";
+			if(!ch.equals("-1")){
+				ch1.add(test(ch));
+			}
+		}while(!ch.equals("-1"));
+		for(int i=0;i<ch1.size();i++){
+			if(ch3.length()<ch1.get(i).length())
+				ch3=ch1.get(i);
 		}
-		ch2=test(arr);
-		System.out.println(ch2);
+		for(int i=0;i<ch1.size();i++){
+			try{
+				if(ch1.get(i).length()==ch3.length()){
+					ch2.add(ch1.get(i));
+				}
+			}catch(Exception h){
+				continue;
+			}
+		}
+		for(int i=0;i<ch2.size();i++){
+			int num=(int)ch2.get(i).charAt(0);
+			max=(int)ch2.get(0).charAt(0);
+			if(max>num){
+				max=num;
+				ch3=ch2.get(i);
+			}
+		}
+		System.out.println(ch3);
 	}
 }
