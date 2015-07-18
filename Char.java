@@ -1,10 +1,12 @@
 import java.util.*;
 public class Char2 {
 	public static String test(String m){
-		int[] ch=new int[100];
-		String[] ch1=new String[100];
+		ArrayList<Integer>ch=new ArrayList<Integer>();
+		ArrayList<String>ch1=new ArrayList<String>();
+		ArrayList<String>ch4=new ArrayList<String>();
 		int n=1;
 		int max=0;
+		int max1=0;
 		int j=0;
 		String ch2="";
 		String ch3="";
@@ -13,22 +15,36 @@ public class Char2 {
 				if(m.charAt(i)==m.charAt(i+1)){
 					n++;			
 				}else{
-					ch[j]=n;
-					ch1[j]=String.valueOf(m.charAt(i));
+					ch.add(n);
+					ch1.add(String.valueOf(m.charAt(i)));
 					j++;
 					n=1;
 				}
 			}else{
-				ch[j]=n;
-				ch1[j]=String.valueOf(m.charAt(i));
+				ch.add(n);
+				ch1.add(String.valueOf(m.charAt(i)));
 				j++;
 				n=1;
 			}
 		}
-		for(int i=0;i<100;i++){
-			if(max<ch[i]){
-				max=ch[i];
-				ch2=ch1[i];
+		for(int i=0;i<ch.size();i++){
+			if(max<ch.get(i)){
+				max=ch.get(i);
+				ch2=ch1.get(i);
+			}
+		}
+		j=0;
+		for(int i=0;i<ch.size();i++){
+			if(max==ch.get(i)){
+				ch4.add(ch1.get(i));
+			}
+		}
+		for(int i=0;i<ch4.size();i++){
+			int num=(int)ch4.get(i).charAt(0);
+			max1=(int)ch4.get(0).charAt(0);
+			if(max1>num){
+				max1=num;
+				ch2=ch4.get(i);
 			}
 		}
 		for(int i=0;i<max;i++){
