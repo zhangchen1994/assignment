@@ -1,49 +1,88 @@
 import java.util.*;
-public class Char {
-	public static String test(ArrayList<String>arr){
-		int[][] cont=new int[100][100];
-		String[] ch=new String[100];
-		int k=0;
-		int cont1=0;
-		String ch1="NO";
-		String ch2=" ";
-		for(int i=0;i<arr.size();i++){
-			for(int j=0;j<arr.get(i).length();j++){
-				if(String.valueOf(arr.get(i).charAt(j)).equals(String.valueOf(arr.get(i).charAt(j)))){
-					cont[i][k]++;
-					ch[i]=String.valueOf(arr.get(i).charAt(j));
-				}else
-					k++;
-			}
-		}
-		for(int i=0;i<100;i++){
-			for(int j=0;j<100;j++){
-				if(cont1<cont[i][j]){
-					cont1=cont[i][j];
-					ch1=ch[i];
+public class Char2 {
+	public static String test(String m){
+		ArrayList<Integer>ch=new ArrayList<Integer>();
+		ArrayList<String>ch1=new ArrayList<String>();
+		ArrayList<String>ch4=new ArrayList<String>();
+		int n=1;
+		int max=0;
+		int max1=0;
+		int j=0;
+		String ch2="";
+		String ch3="";
+		for(int i=0;i<m.length();i++){
+			if(i!=m.length()-1){
+				if(m.charAt(i)==m.charAt(i+1)){
+					n++;			
+				}else{
+					ch.add(n);
+					ch1.add(String.valueOf(m.charAt(i)));
+					j++;
+					n=1;
 				}
+			}else{
+				ch.add(n);
+				ch1.add(String.valueOf(m.charAt(i)));
+				j++;
+				n=1;
 			}
 		}
-		//for(int i=0;i<=cont1;i++){
-			//ch2+=ch1;
-		//}
-		return ch1;
+		for(int i=0;i<ch.size();i++){
+			if(max<ch.get(i)){
+				max=ch.get(i);
+				ch2=ch1.get(i);
+			}
+		}
+		j=0;
+		for(int i=0;i<ch.size();i++){
+			if(max==ch.get(i)){
+				ch4.add(ch1.get(i));
+			}
+		}
+		for(int i=0;i<ch4.size();i++){
+			int num=(int)ch4.get(i).charAt(0);
+			max1=(int)ch4.get(0).charAt(0);
+			if(max1>num){
+				max1=num;
+				ch2=ch4.get(i);
+			}
+		}
+		for(int i=0;i<max;i++){
+			ch3+=ch2;
+		}
+		return ch3;
 	}
 	public static void main(String[] args){
 		Scanner in=new Scanner(System.in);
-		String ch="-1";
-		String ch2;
-		String n="0";
-		ArrayList<String>arr=new ArrayList<String>();
-		System.out.println("ÊäÈëÈô¸É¸ö×Ö·û´®£¬ÊäÈë-1½áÊø");
-		while(!n.equals("-1")){
+		String ch;
+		ArrayList<String>ch1=new ArrayList<String>();
+		ArrayList<String>ch2=new ArrayList<String>();
+		String ch3="";
+		int max=0;
+		System.out.println("è¯·è¾“å…¥å¤šä¸ªå­—ç¬¦ä¸²ï¼Œä»¥-1ç»“æŸ");
+		do{
 			ch=in.next();
-			if(!ch.endsWith("-1"))
-			arr.add(in.next());
-			else
-				n="-1";
+			if(!ch.equals("-1")){
+				ch1.add(test(ch));
+			}
+		}while(!ch.equals("-1"));
+		for(int i=0;i<ch1.size();i++){
+			if(ch3.length()<ch1.get(i).length())
+				ch3=ch1.get(i);
 		}
-		ch2=test(arr);
-		System.out.println(ch2);
+		for(int i=0;i<ch1.size();i++){
+				if(ch1.get(i).length()==ch3.length()){
+					ch2.add(ch1.get(i));
+			}
+		}
+		for(int i=0;i<ch2.size();i++){
+			int num=(int)ch2.get(i).charAt(0);
+			max=(int)ch2.get(0).charAt(0);
+			if(max>num){
+				max=num;
+				ch3=ch2.get(i);
+			}
+		}
+		System.out.println(ch3);
 	}
 }
