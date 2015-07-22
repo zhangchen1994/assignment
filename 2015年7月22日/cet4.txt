@@ -1,0 +1,26 @@
+#include<stdio.h>
+void main(){
+	int a[8];
+	int b;
+	int c;
+	int i=0;
+	printf("请输入四级成绩少于8次，以-1结束\n");
+	for(i=0;i<8;i++){
+		scanf("%d",&b);
+		if(b==-1){
+		break;
+		}else
+			a[i]=b;
+	}
+	for(i=0;i<8;i++){
+		if(a[i]>=425){
+		c=0;
+		break;
+	}else
+		c=1;
+	}
+	if(c==0){
+		printf("已通过四级\n");
+	}else
+		printf("未通过\n");
+}
