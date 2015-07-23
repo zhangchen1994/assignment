@@ -28,8 +28,8 @@ class Person {
 	Hand[] hand=new Hand[2];
 	public void printInfo(){
 		for(int i=0;i<2;i++){
-			System.out.println("µÚ"+(i+1)+"Ö»ÍÈµÄ"+leg[i].length+"cm"+" "+leg[i].weight+"kg");
-			System.out.println("µÚ"+(i+1)+"Ö»ÊÖµÄ"+hand[i].length+"cm"+" "+hand[i].weight+"kg");
+			System.out.println("ç¬¬"+(i+1)+"åªè…¿"+leg[i].length+"cm"+" "+leg[i].weight+"kg");
+			System.out.println("ç¬¬"+(i+1)+"æ‰‹"+hand[i].length+"cm"+" "+hand[i].weight+"kg");
 		}
 	}
 }
