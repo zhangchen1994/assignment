@@ -18,6 +18,7 @@ public class Word {
 			s1+=s;
 		}
 		getword(s1);
+		//System.out.println(letters);
 	}
 
 	private static void getword(String s) {
@@ -75,20 +76,21 @@ public class Word {
 				}
 			}
 		}	
-		 for(String t:word2){
-				System.out.println(t);
-			}
+		// for(String t:word2){
+		//System.out.println(t);
+		//}
 		int l=0;
 		int num=1;
+		int flag2=0;
 		for(int i=0;i<10;i++){
-			wordwh[i]=word2[l];
-			for(int j=l;l<word2.length;){
-				num++;
-				if(!wordwh[i].equals(word2[num])){
-					l=num;
-					break;
+			if(i!=0){
+				for(String s1:word){
+					if(wordwh[i-1].equals(s1)){
+						l++;
+					}
 				}
 			}
+			wordwh[i]=word2[l];
 		}
 		for(String s:wordwh){
 			System.out.println(s);
