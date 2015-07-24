@@ -8,14 +8,16 @@ public class Word {
 	public static void main(String[] args)throws IOException{
 		FileReader txt=new FileReader("D:\\src.txt");
 		BufferedReader br = new BufferedReader(txt);
+		String s="";
+		String s1="";
 		while(true){
-			String s = br.readLine();
+			s = br.readLine();
 			if (s == null){
 				break;
 			}
-			getword(s);
+			s1+=s;
 		}
-		//System.out.println(letters);
+		getword(s1);
 	}
 
 	private static void getword(String s) {
@@ -61,10 +63,6 @@ public class Word {
 			word2[k]=s;
 			k++;
 		}
-		Arrays.sort(weight);
-		for(int t:weight){
-			System.out.print(t+" ");
-		}//ÅÅ²»ÁËÐò£»
 		for(int i=weight.length-1;i>0;i--){
 			for(int j=0;j<i;j++){
 				if(weight[j]<weight[j+1]){
@@ -76,12 +74,11 @@ public class Word {
 					word2[j+1]=s;
 				}
 			}
-		}
-		//Arrays.sort(weight);
-		//for(int t:weight){
-			//System.out.println(t);
-		//}
-		/*int l=0;
+		}	
+		 for(String t:word2){
+				System.out.println(t);
+			}
+		int l=0;
 		int num=1;
 		for(int i=0;i<10;i++){
 			wordwh[i]=word2[l];
@@ -95,6 +92,6 @@ public class Word {
 		}
 		for(String s:wordwh){
 			System.out.println(s);
-		}*/
+		}
 	}
 }
